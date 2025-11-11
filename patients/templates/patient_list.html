@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Patient List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-color: #f7f7f7;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            margin: 20px;
+            padding: 12px 24px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        li {
+            background-color: white;
+            margin-bottom: 12px;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: left;
+            font-size: 18px;
+        }
+
+        .empty {
+            font-style: italic;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <h1>Registered Patients</h1>
+    <a href="{% url 'register_patient' %}" class="btn">Add New Patient</a>
+    <ul>
+        {% for patient in patients %}
+            <li>
+                <strong>{{ patient.full_name }}</strong> — {{ patient.age }} years — {{ patient.get_gender_display }}
+            </li>
+        {% empty %}
+            <li class="empty">No patients registered yet.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
