@@ -16,12 +16,14 @@
 - Run the app
 
       python manage.py runserver
+
+- Open the link provided in `python manage.py runserver`'s stdout in your browser
   
 - Credentials
   - user : `mimi`
-  - password: `notcommon` 
+  - password: `notcommon`
 
-- Endpoints
+- Routes
   - `''`
   - `/register`
   - `/patients` 
