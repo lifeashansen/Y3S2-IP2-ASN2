@@ -24,6 +24,6 @@
   - password: `notcommon`
 
 - Routes
-  - `''`
+  - `/`
   - `/register`
   - `/patients` 
